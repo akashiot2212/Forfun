@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#130e27" />
+  <meta name="description" content="A little letter for Jothika, before the final chapter of college." />
+  <title>A Little Letter for Jothika</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23f07c9b' d='M32 54S8 40 8 22C8 12 20 8 27 18c2-3 5-6 10-6 8 0 13 6 13 14 0 15-18 25-18 28Z'/%3E%3C/svg%3E" />
+  <style>
+    :root { --ink:#fff8f4; --muted:#cabed1; --rose:#f07c9b; --rose-2:#ffb5c4; --violet:#9a77f6; --night:#130e27; --card:rgba(28,18,52,.72); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--night); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; overflow-x:hidden; }
+    body::before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.24; background-image:radial-gradient(rgba(255,255,255,.25) .8px, transparent .8px); background-size:34px 34px; mask-image:linear-gradient(to bottom, black, transparent 90%); }
+    .scene { min-height:100vh; position:relative; overflow:hidden; background:radial-gradient(circle at 72% 10%, rgba(154,119,246,.27), transparent 27rem), radial-gradient(circle at 14% 30%, rgba(240,124,155,.15), transparent 24rem), linear-gradient(145deg,#100b22 0%,#1c1235 54%,#100b22 100%); }
+    .glow { position:absolute; border-radius:50%; filter:blur(1px); opacity:.6; pointer-events:none; }
+    .glow.one { width:18rem; height:18rem; top:-7rem; right:-4rem; background:rgba(240,124,155,.19); box-shadow:0 0 90px 20px rgba(240,124,155,.12); }
+    .glow.two { width:11rem; height:11rem; bottom:11%; left:-5rem; background:rgba(154,119,246,.22); box-shadow:0 0 90px 20px rgba(154,119,246,.15); }
+    .topbar { max-width:1160px; margin:auto; padding:1.5rem 1.5rem 0; display:flex; align-items:center; justify-content:space-between; position:relative; z-index:2; }
+    .mark { display:flex; align-items:center; gap:.65rem; color:var(--muted); font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; }
+    .mark-heart { color:var(--rose); font-size:1.25rem; text-shadow:0 0 18px rgba(240,124,155,.8); }
+    .date { color:rgba(255,248,244,.5); font-size:.8rem; }
+    main { max-width:1160px; margin:auto; padding:clamp(3rem,9vw,7.5rem) 1.5rem 5rem; position:relative; z-index:1; }
+    .hero { min-height:calc(100vh - 4rem); display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(3rem,8vw,8rem); align-items:center; }
+    .eyebrow { display:flex; align-items:center; gap:.7rem; color:var(--rose-2); font-size:.85rem; letter-spacing:.18em; text-transform:uppercase; margin-bottom:1.8rem; }
+    .eyebrow::before { content:""; width:2.4rem; height:1px; background:var(--rose); box-shadow:0 0 10px var(--rose); }
+    h1 { font-family: Georgia, "Times New Roman", serif; font-weight:400; font-size:clamp(3.5rem,8vw,7.3rem); line-height:.92; letter-spacing:-.06em; margin:0; max-width:8ch; }
+    h1 em { color:var(--rose-2); font-style:italic; text-shadow:0 0 36px rgba(240,124,155,.3); }
+    .lede { max-width:32rem; color:var(--muted); font-size:1.08rem; line-height:1.75; margin:2rem 0 2.2rem; }
+    .cta { display:inline-flex; align-items:center; gap:.75rem; padding:1rem 1.3rem; border:1px solid rgba(255,181,196,.45); border-radius:999px; color:var(--ink); background:linear-gradient(135deg,rgba(240,124,155,.9),rgba(154,119,246,.9)); box-shadow:0 0 28px rgba(240,124,155,.2), inset 0 1px rgba(255,255,255,.35); cursor:pointer; font:inherit; font-weight:700; transition:transform .25s ease, box-shadow .25s ease; }
+    .cta:hover, .cta:focus-visible { transform:translateY(-3px); box-shadow:0 0 42px rgba(240,124,155,.4), inset 0 1px rgba(255,255,255,.5); outline:none; }
+    .cta .arrow { font-size:1.25rem; transition:transform .25s ease; }
+    .cta:hover .arrow { transform:translateX(4px); }
+    .microcopy { color:rgba(255,248,244,.46); font-size:.84rem; margin:.85rem 0 0 1rem; }
+    .orbit { min-height:29rem; position:relative; display:grid; place-items:center; }
+    .orbit::before,.orbit::after { content:""; position:absolute; border:1px solid rgba(255,181,196,.2); border-radius:50%; transform:rotate(-20deg); }
+    .orbit::before { width:min(31rem,90vw); height:min(20rem,60vw); }
+    .orbit::after { width:min(22rem,68vw); height:min(29rem,82vw); transform:rotate(35deg); border-color:rgba(154,119,246,.24); }
+    .letter { width:min(22rem,90vw); min-height:28rem; padding:2.2rem 2rem; position:relative; border:1px solid rgba(255,255,255,.15); border-radius:1.25rem; background:linear-gradient(145deg,rgba(52,30,78,.84),rgba(23,16,47,.78)); box-shadow:0 22px 70px rgba(0,0,0,.38), 0 0 50px rgba(240,124,155,.12); transform:rotate(3deg); backdrop-filter:blur(12px); }
+    .letter::before { content:""; position:absolute; inset:.65rem; border:1px solid rgba(255,181,196,.18); border-radius:.85rem; pointer-events:none; }
+    .seal { position:absolute; right:1.25rem; top:1.05rem; width:2.5rem; height:2.5rem; display:grid; place-items:center; border-radius:50%; background:var(--rose); color:#32132c; font-size:1.25rem; box-shadow:0 0 20px rgba(240,124,155,.4); }
+    .letter small { color:var(--rose-2); letter-spacing:.18em; text-transform:uppercase; font-size:.66rem; }
+    .letter h2 { font:400 2.7rem/1 Georgia,serif; margin:3rem 0 1.4rem; }
+    .letter p { color:var(--muted); line-height:1.7; font-size:.98rem; margin:0 0 1rem; }
+    .signature { color:var(--rose-2); font-family:Georgia,serif; font-style:italic; font-size:1.3rem; margin-top:2rem; }
+    .scroll-note { position:absolute; bottom:1.3rem; left:50%; transform:translateX(-50%); color:rgba(255,248,244,.4); font-size:.76rem; letter-spacing:.12em; text-transform:uppercase; display:flex; align-items:center; gap:.5rem; }
+    .scroll-note span { width:1px; height:2rem; background:linear-gradient(var(--rose),transparent); }
+    .story { padding:6rem 0 2rem; }
+    .section-kicker { color:var(--rose-2); letter-spacing:.14em; text-transform:uppercase; font-size:.8rem; }
+    .story h2 { font:400 clamp(2.4rem,6vw,4.5rem)/1.02 Georgia,serif; max-width:10ch; margin:1rem 0 3rem; }
+    .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+    .step { padding:1.5rem; min-height:11rem; border-top:1px solid rgba(255,181,196,.45); background:linear-gradient(180deg,rgba(255,255,255,.05),transparent); }
+    .step-number { color:var(--rose); font:italic 1.5rem Georgia,serif; }
+    .step h3 { font:500 1.05rem Georgia,serif; margin:1.3rem 0 .6rem; }
+    .step p { color:var(--muted); line-height:1.6; font-size:.94rem; margin:0; }
+    .proposal { padding:6rem 0 4rem; display:grid; place-items:center; text-align:center; }
+    .proposal-card { width:min(42rem,100%); padding:clamp(2rem,6vw,4rem); border-radius:2rem; background:linear-gradient(145deg,rgba(240,124,155,.15),rgba(154,119,246,.12)); border:1px solid rgba(255,181,196,.25); box-shadow:0 30px 90px rgba(0,0,0,.25); }
+    .proposal-card h2 { font:400 clamp(2.5rem,7vw,5rem)/.98 Georgia,serif; margin:1rem 0; }
+    .proposal-card p { color:var(--muted); line-height:1.7; max-width:31rem; margin:0 auto 2rem; }
+    .choices { display:flex; justify-content:center; gap:.75rem; flex-wrap:wrap; }
+    .choice { border:1px solid rgba(255,181,196,.45); border-radius:999px; padding:.85rem 1.1rem; background:rgba(14,9,29,.35); color:var(--ink); font:inherit; cursor:pointer; transition:all .2s ease; }
+    .choice:hover,.choice:focus-visible { background:rgba(240,124,155,.25); border-color:var(--rose-2); transform:translateY(-2px); outline:none; }
+    .response { min-height:1.5rem; color:var(--rose-2); font-family:Georgia,serif; font-style:italic; margin:1.5rem 0 0; }
+    .music-player { position:fixed; right:1.25rem; bottom:1.25rem; z-index:5; display:flex; align-items:center; gap:.7rem; padding:.65rem .85rem .65rem .65rem; border:1px solid rgba(255,181,196,.35); border-radius:999px; background:rgba(24,14,46,.82); box-shadow:0 12px 35px rgba(0,0,0,.3), 0 0 25px rgba(240,124,155,.12); backdrop-filter:blur(14px); }
+    .music-toggle { width:2.5rem; height:2.5rem; display:grid; place-items:center; border:0; border-radius:50%; color:#32132c; background:var(--rose-2); cursor:pointer; font-size:1rem; box-shadow:0 0 18px rgba(240,124,155,.35); }
+    .music-toggle:hover,.music-toggle:focus-visible { background:#fff0f3; outline:2px solid var(--rose); outline-offset:2px; }
+    .music-copy { display:flex; flex-direction:column; gap:.1rem; padding-right:.2rem; }
+    .music-label { color:var(--ink); font-size:.76rem; font-weight:700; }
+    .music-status { color:var(--muted); font-size:.68rem; }
+    .music-bars { display:flex; align-items:end; gap:2px; height:1rem; margin-left:.15rem; }
+    .music-bars i { width:2px; height:5px; border-radius:2px; background:var(--rose); }
+    .music-player.playing .music-bars i { animation:musicbar .75s ease-in-out infinite alternate; }
+    .music-player.playing .music-bars i:nth-child(2){animation-delay:-.4s}.music-player.playing .music-bars i:nth-child(3){animation-delay:-.2s}
+    @keyframes musicbar { from{height:4px} to{height:15px} }
+    footer { max-width:1160px; padding:1rem 1.5rem 2rem; margin:auto; color:rgba(255,248,244,.42); font-size:.78rem; display:flex; justify-content:space-between; gap:1rem; }
+    .spark { position:absolute; width:3px; height:3px; border-radius:50%; background:#fff; box-shadow:0 0 12px 2px var(--rose-2); animation:float 6s ease-in-out infinite; opacity:.55; }
+    .s1{top:18%;left:48%;animation-delay:-1s}.s2{top:42%;right:12%;animation-delay:-3s}.s3{top:72%;left:9%;animation-delay:-4s}.s4{top:27%;right:30%;animation-delay:-2s}.s5{top:81%;right:23%;animation-delay:-5s}
+    @keyframes float { 0%,100%{transform:translateY(0) scale(1);opacity:.3} 50%{transform:translateY(-18px) scale(1.4);opacity:.85} }
+    @media (max-width:760px) { .topbar{padding-top:1rem}.date{display:none}.hero{grid-template-columns:1fr; min-height:auto; padding-top:3rem; gap:4rem}.orbit{min-height:24rem}.letter{min-height:26rem}.scroll-note{display:none}.steps{grid-template-columns:1fr}.story{padding-top:4rem}.proposal{padding-top:4rem} footer{flex-direction:column;gap:.4rem} }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important} }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <div class="glow one"></div><div class="glow two"></div>
+    <i class="spark s1"></i><i class="spark s2"></i><i class="spark s3"></i><i class="spark s4"></i><i class="spark s5"></i>
+    <header class="topbar"><div class="mark"><span class="mark-heart">♥</span><span>a little letter</span></div><div class="date">before the final chapter</div></header>
+    <main>
+      <section class="hero" aria-labelledby="main-title">
+        <div>
+          <div class="eyebrow">For Jothika</div>
+          <h1 id="main-title">Some things are worth <em>saying.</em></h1>
+          <p class="lede">We’ve shared the same college chapter for a while. Before our final semester turns the page, I wanted to give one honest thought a little space.</p>
+          <button class="cta" id="openLetter">Open the letter <span class="arrow">→</span></button>
+          <p class="microcopy">No pressure. Just something true.</p>
+        </div>
+        <div class="orbit" aria-label="A sealed letter for Jothika">
+          <article class="letter" id="letter">
+            <div class="seal">♥</div>
+            <small>Dear Jothika,</small>
+            <h2>A small question.</h2>
+            <p>I know we haven’t really spoken yet, so this may be unexpected. But I’ve noticed your presence, your energy, and the way you make ordinary college days feel a little brighter.</p>
+            <p>Would you let me get to know you?</p>
+            <div class="signature">— from someone who hopes</div>
+          </article>
+        </div>
+      </section>
+      <section class="story" aria-labelledby="story-title">
+        <div class="section-kicker">One honest thought</div>
+        <h2 id="story-title">A beginning can be simple.</h2>
+        <div class="steps">
+          <article class="step"><div class="step-number">01</div><h3>We’re here</h3><p>Seventh semester. A thousand small moments, and a little time still left.</p></article>
+          <article class="step"><div class="step-number">02</div><h3>I’m asking</h3><p>Not for a promise or a perfect answer. Just one conversation, if you’d like that too.</p></article>
+          <article class="step"><div class="step-number">03</div><h3>Your choice</h3><p>Whatever you feel, I’ll respect it. Thank you for reading this far.</p></article>
+        </div>
+      </section>
+      <section class="proposal" aria-labelledby="proposal-title">
+        <div class="proposal-card">
+          <div class="section-kicker">So, Jothika…</div>
+          <h2 id="proposal-title">Could we start with coffee?</h2>
+          <p>Maybe between classes. Maybe after college. Somewhere easy, with no grand expectations—just a chance to meet properly.</p>
+          <div class="choices" role="group" aria-label="Choose a response">
+            <button class="choice" data-response="That little yes just made my day. ☕">Yes, let’s talk ☕</button>
+            <button class="choice" data-response="Of course. Take your time — I’ll always respect your answer. 🌙">I need time 🌙</button>
+            <button class="choice" data-response="Thank you for being honest. I’m wishing you only good things. ✨">Not for me ✨</button>
+          </div>
+          <p class="response" id="response" aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+    <aside class="music-player" id="musicPlayer" aria-label="Music player">
+      <button class="music-toggle" id="musicToggle" type="button" aria-label="Play romantic music">▶</button>
+      <div class="music-copy"><span class="music-label">A little music</span><span class="music-status" id="musicStatus">Tap to play</span></div>
+      <div class="music-bars" aria-hidden="true"><i></i><i></i><i></i></div>
+      <audio id="romanticAudio" preload="metadata" loop src="/romantic.mpeg"></audio>
+    </aside>
+    <footer><span>Made with courage, not pressure.</span><span>Class of our almost-final chapter · 2026</span></footer>
+  </div>
+  <script>
+    const openButton = document.getElementById('openLetter');
+    const letter = document.getElementById('letter');
+    openButton.addEventListener('click', () => {
+      letter.animate([{transform:'rotate(3deg) scale(1)'},{transform:'rotate(0deg) scale(1.04)'},{transform:'rotate(3deg) scale(1)'}], {duration:700, easing:'cubic-bezier(.2,.8,.2,1)'});
+      letter.scrollIntoView({behavior:'smooth', block:'center'});
+      openButton.innerHTML = 'The letter is open <span class="arrow">♥</span>';
+    });
+    document.querySelectorAll('.choice').forEach(button => button.addEventListener('click', async () => {
+      const response = document.getElementById('response');
+      const answer = button.textContent.trim();
+      response.textContent = 'Sending your answer…';
+      document.querySelectorAll('.choice').forEach(choice => choice.disabled = true);
+      try {
+        const result = await fetch('/api/telegram', { method:'POST', headers:{'content-type':'application/json'}, body:JSON.stringify({answer}) });
+        const data = await result.json();
+        response.textContent = data.ok ? button.dataset.response : 'Your answer was not sent yet. Please try once more.';
+      } catch {
+        response.textContent = 'Something went wrong. Please try once more.';
+      }
+      document.querySelectorAll('.choice').forEach(choice => choice.disabled = false);
+    }));
+    const musicPlayer = document.getElementById('musicPlayer');
+    const musicToggle = document.getElementById('musicToggle');
+    const romanticAudio = document.getElementById('romanticAudio');
+    const musicStatus = document.getElementById('musicStatus');
+    musicToggle.addEventListener('click', async () => {
+      if (romanticAudio.paused) {
+        try { await romanticAudio.play(); musicPlayer.classList.add('playing'); musicToggle.textContent = 'Ⅱ'; musicToggle.setAttribute('aria-label', 'Pause romantic music'); musicStatus.textContent = 'Playing softly'; }
+        catch { musicStatus.textContent = 'Tap again to play'; }
+      } else {
+        romanticAudio.pause(); musicPlayer.classList.remove('playing'); musicToggle.textContent = '▶'; musicToggle.setAttribute('aria-label', 'Play romantic music'); musicStatus.textContent = 'Paused';
+      }
+    });
+  </script>
+</body>
+</html>
